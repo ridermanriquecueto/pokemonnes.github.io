@@ -1,0 +1,234 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1f2937;
+  color: #f9fafb;
+  line-height: 1.5;
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px 10px 10px;
+  background-color: #111827;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.app-header .sub {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  width: 200px;
+}
+
+.search-box button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+}
+
+.options button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #10b981;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-list {
+  position: absolute;
+  background: #111827;
+  list-style: none;
+  border-radius: 6px;
+  padding: 6px;
+  margin-top: 2px;
+  width: 220px;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.autocomplete-list li {
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.autocomplete-list li:hover {
+  background-color: #374151;
+}
+
+/* Galería */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #374151;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.card .sprite img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card h3 {
+  margin: 6px 0 4px;
+  font-size: 1rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.badge {
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.show { display: flex; }
+
+.modal-content {
+  background: #1f2937;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  gap: 16px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #f9fafb;
+}
+
+.modal-left img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.modal-right {
+  flex: 1;
+  min-width: 220px;
+}
+
+.modal-right h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.stats {
+  margin-top: 8px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+/* Filtro de tipos */
+#tipoFilters button {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 16px 10px;
+  background-color: #111827;
+  color: #9ca3af;
+  margin-top: 30px;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  .modal-content { flex-direction: column; align-items: center; }
+  .modal-right { width: 100%; }
+  .search-box input { width: 140px; }
+}

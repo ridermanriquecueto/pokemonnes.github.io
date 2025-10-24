@@ -1,26 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos.css">
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokédex - Galería (100)</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="app-header">
+    <h1>Pokédex - Galería (100)</h1>
+    <p class="sub">Escribí para buscar o elegí un Pokémon de la galería.</p>
+  </header>
 
+  <main class="container">
+
+    <!-- Filtro por tipo -->
+    <div id="tipoFilters" style="margin-bottom:12px; display:flex; flex-wrap:wrap; gap:8px"></div>
+
+    <!-- Controles de búsqueda y botones -->
+    <section class="controls">
+      <div class="search-box">
+        <input id="inputPokemon" type="text" placeholder="Buscar Pokémon... Ej: pikachu" autocomplete="off" />
+        <button id="btnBuscar">Buscar</button>
+        <ul id="autocomplete" class="autocomplete-list" hidden></ul>
+      </div>
+      <div class="options">
+        <button id="btnRecargar">Recargar 100 Pokémon</button>
+        <button id="btnAzar">Sorpresa (Aleatorio)</button>
+      </div>
+    </section>
+
+    <!-- Galería de Pokémon -->
+    <section id="gallery" class="gallery" aria-live="polite">
+      <!-- tarjetas de Pokémon se insertan aquí -->
+    </section>
+
+  </main>
+
+  <!-- Modal con detalles -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div id="modalBody"></div>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+  </div>
+
+  <footer class="app-footer">
+    <small>Datos obtenidos desde PokeAPI. Proyecto educativo.</small>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
-<header>
-  <h1>Tarea Clase 9: Desafío Pokémon </h1>
-</header>
-<main>
-  <h2> Mis Pokémones favoritos </h2>
-  <ul id="pokemon-list">
-  </ul>
-</main>
-
-<script src="main.js"></script>
-
 </html>
